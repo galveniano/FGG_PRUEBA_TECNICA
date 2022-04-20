@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['views_5f_5fviewimports_0',['Views__ViewImports',['../class_asp_net_core_1_1_views_____view_imports.html',1,'AspNetCore']]],
+  ['views_5f_5fviewstart_1',['Views__ViewStart',['../class_asp_net_core_1_1_views_____view_start.html',1,'AspNetCore']]],
+  ['views_5fclientes_5fcreate_2',['Views_Clientes_Create',['../class_asp_net_core_1_1_views___clientes___create.html',1,'AspNetCore']]],
+  ['views_5fclientes_5fdelete_3',['Views_Clientes_Delete',['../class_asp_net_core_1_1_views___clientes___delete.html',1,'AspNetCore']]],
+  ['views_5fclientes_5fdetails_4',['Views_Clientes_Details',['../class_asp_net_core_1_1_views___clientes___details.html',1,'AspNetCore']]],
+  ['views_5fclientes_5fedit_5',['Views_Clientes_Edit',['../class_asp_net_core_1_1_views___clientes___edit.html',1,'AspNetCore']]],
+  ['views_5fclientes_5findex_6',['Views_Clientes_Index',['../class_asp_net_core_1_1_views___clientes___index.html',1,'AspNetCore']]],
+  ['views_5fhome_5findex_7',['Views_Home_Index',['../class_asp_net_core_1_1_views___home___index.html',1,'AspNetCore']]],
+  ['views_5fshared_5f_5flayout_8',['Views_Shared__Layout',['../class_asp_net_core_1_1_views___shared_____layout.html',1,'AspNetCore']]],
+  ['views_5fshared_5f_5fvalidationscriptspartial_9',['Views_Shared__ValidationScriptsPartial',['../class_asp_net_core_1_1_views___shared_____validation_scripts_partial.html',1,'AspNetCore']]],
+  ['views_5fshared_5ferror_10',['Views_Shared_Error',['../class_asp_net_core_1_1_views___shared___error.html',1,'AspNetCore']]],
+  ['views_5fusuarios_5fcreate_11',['Views_Usuarios_Create',['../class_asp_net_core_1_1_views___usuarios___create.html',1,'AspNetCore']]],
+  ['views_5fusuarios_5fdelete_12',['Views_Usuarios_Delete',['../class_asp_net_core_1_1_views___usuarios___delete.html',1,'AspNetCore']]],
+  ['views_5fusuarios_5fdetails_13',['Views_Usuarios_Details',['../class_asp_net_core_1_1_views___usuarios___details.html',1,'AspNetCore']]],
+  ['views_5fusuarios_5fedit_14',['Views_Usuarios_Edit',['../class_asp_net_core_1_1_views___usuarios___edit.html',1,'AspNetCore']]],
+  ['views_5fusuarios_5findex_15',['Views_Usuarios_Index',['../class_asp_net_core_1_1_views___usuarios___index.html',1,'AspNetCore']]]
+];
