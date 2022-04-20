@@ -10,6 +10,7 @@ namespace FGG_PRUEBA_TECNICA.Models
     {
         [Key]
         public int idClientes { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string CodCliente { get; set; }
         public string Nombre { get; set; }
         public DateTime? FechaInicio { get; set; }
