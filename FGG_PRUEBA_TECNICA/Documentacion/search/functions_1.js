@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['clientescontroller_0',['ClientesController',['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_clientes_controller.html#a0b454f3aa0c2f01fdfa5eb1448fc56cc',1,'FGG_PRUEBA_TECNICA::ClientesController']]],
+  ['configure_1',['Configure',['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_startup.html#a29a780448ad72492c5bcdbf135d15f06',1,'FGG_PRUEBA_TECNICA::Startup']]],
+  ['configureservices_2',['ConfigureServices',['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_startup.html#aad3a2ae7c264fabfc9db71a56bbaa31d',1,'FGG_PRUEBA_TECNICA::Startup']]],
+  ['create_3',['Create',['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_clientes_controller.html#ac2a113552323a2ab335be73a85480075',1,'FGG_PRUEBA_TECNICA.ClientesController.Create()'],['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_clientes_controller.html#a3cbd81f60be12d85d8de01254e413d2a',1,'FGG_PRUEBA_TECNICA.ClientesController.Create([Bind(&quot;idClientes,CodCliente,Nombre,FechaInicio,CodigoComercial,Activo&quot;)] Clientes clientes)'],['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_usuarios_controller.html#a6fa07098a55985b5a665d0678a661992',1,'FGG_PRUEBA_TECNICA.UsuariosController.Create()'],['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_usuarios_controller.html#ab84cba5787a69a08ff9f98acd1b92edd',1,'FGG_PRUEBA_TECNICA.UsuariosController.Create([Bind(&quot;idUsuario,NombreCompleto,FechaAlta,Clientes_idClientes&quot;)] Usuarios usuarios)']]],
+  ['createhostbuilder_4',['CreateHostBuilder',['../class_f_g_g___p_r_u_e_b_a___t_e_c_n_i_c_a_1_1_program.html#a95f8f4764421dd0e2fe5af4a272a5e85',1,'FGG_PRUEBA_TECNICA::Program']]]
+];
