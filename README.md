@@ -20,7 +20,7 @@
 Lo necesario para configurar el proyecto sería tener inicializadas las tablas con los siguientes script de creación:
 
 ## Tabla Clientes
-```
+```sql
 USE [bbdd]
 GO
 
@@ -47,7 +47,7 @@ GO
 ```
 
 ## Tabla Usuarios
-```
+```sql
 USE [bbdd]
 GO
 
