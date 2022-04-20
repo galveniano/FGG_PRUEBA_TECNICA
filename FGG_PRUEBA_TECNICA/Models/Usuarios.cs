@@ -9,12 +9,9 @@ namespace FGG_PRUEBA_TECNICA.Models
     {
         [Key]
         public int idUsuario { get; set; }
-        public string NombreCompleto { get; set; }
+        public string? NombreCompleto { get; set; }
         public DateTime FechaAlta { get; set; }
-
-        [ForeignKey("Clientes")]
         public int Clientes_idClientes { get; set; }
-
         public Clientes Clientes { get; set; }
     }
 }

@@ -10,27 +10,23 @@ using FGG_PRUEBA_TECNICA.Models;
 
 namespace FGG_PRUEBA_TECNICA
 {
-    public class ClientesController : Controller
+    public class UsuariosController : Controller
     {
         private readonly BBDDContext _context;
 
-        public ClientesController(BBDDContext context)
+        public UsuariosController(BBDDContext context)
         {
             _context = context;
         }
 
-        // GET: Clientes
-        public async Task<IActionResult> Index(string CodClienteSearch = null, string NombreSearch = null, string FechaInicioSearch = null, string CodigoComercialSearch = null, string ActivoSearch = null)
+        // GET: Usuarios
+        public async Task<IActionResult> Index()
         {
-            if(CodClienteSearch != null || NombreSearch != null || FechaInicioSearch != null || CodigoComercialSearch != null || ActivoSearch != null)
-            {
-                return View(await _context.Clientes.FromSqlRaw("SELECT * FROM dbo.Clientes Where Activo ='"+ ActivoSearch + "' AND CodCliente='" + CodClienteSearch + "' AND Nombre='" + NombreSearch + "' AND FechaInicio='" + FechaInicioSearch + "' AND CodigoComercial='" + CodigoComercialSearch + "'").ToListAsync());
-
-            }
-            return View(await _context.Clientes.ToListAsync());
+            var bBDDContext = _context.Usuarios.Include(u => u.Clientes);
+            return View(await bBDDContext.ToListAsync());
         }
 
-        // GET: Clientes/Details/5
+        // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,40 +34,42 @@ namespace FGG_PRUEBA_TECNICA
                 return NotFound();
             }
 
-            var clientes = await _context.Clientes
-                .FirstOrDefaultAsync(m => m.idClientes == id);
-
-            if (clientes == null)
+            var usuarios = await _context.Usuarios
+                .Include(u => u.Clientes)
+                .FirstOrDefaultAsync(m => m.idUsuario == id);
+            if (usuarios == null)
             {
                 return NotFound();
             }
 
-            return View(clientes);
+            return View(usuarios);
         }
 
-        // GET: Clientes/Create
+        // GET: Usuarios/Create
         public IActionResult Create()
         {
+            ViewData["Clientes_idClientes"] = new SelectList(_context.Clientes, "idClientes", "idClientes");
             return View();
         }
 
-        // POST: Clientes/Create
+        // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idClientes,CodCliente,Nombre,FechaInicio,CodigoComercial,Activo")] Clientes clientes)
+        public async Task<IActionResult> Create([Bind("idUsuario,NombreCompleto,FechaAlta,Clientes_idClientes")] Usuarios usuarios)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(clientes);
+                _context.Add(usuarios);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(clientes);
+            ViewData["Clientes_idClientes"] = new SelectList(_context.Clientes, "idClientes", "idClientes", usuarios.Clientes_idClientes);
+            return View(usuarios);
         }
 
-        // GET: Clientes/Edit/5
+        // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,22 +77,23 @@ namespace FGG_PRUEBA_TECNICA
                 return NotFound();
             }
 
-            var clientes = await _context.Clientes.FindAsync(id);
-            if (clientes == null)
+            var usuarios = await _context.Usuarios.FindAsync(id);
+            if (usuarios == null)
             {
                 return NotFound();
             }
-            return View(clientes);
+            ViewData["Clientes_idClientes"] = new SelectList(_context.Clientes, "idClientes", "idClientes", usuarios.Clientes_idClientes);
+            return View(usuarios);
         }
 
-        // POST: Clientes/Edit/5
+        // POST: Usuarios/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idClientes,CodCliente,Nombre,FechaInicio,CodigoComercial,Activo")] Clientes clientes)
+        public async Task<IActionResult> Edit(int id, [Bind("idUsuario,NombreCompleto,FechaAlta,Clientes_idClientes")] Usuarios usuarios)
         {
-            if (id != clientes.idClientes)
+            if (id != usuarios.idUsuario)
             {
                 return NotFound();
             }
@@ -103,12 +102,12 @@ namespace FGG_PRUEBA_TECNICA
             {
                 try
                 {
-                    _context.Update(clientes);
+                    _context.Update(usuarios);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientesExists(clientes.idClientes))
+                    if (!UsuariosExists(usuarios.idUsuario))
                     {
                         return NotFound();
                     }
@@ -119,10 +118,11 @@ namespace FGG_PRUEBA_TECNICA
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(clientes);
+            ViewData["Clientes_idClientes"] = new SelectList(_context.Clientes, "idClientes", "idClientes", usuarios.Clientes_idClientes);
+            return View(usuarios);
         }
 
-        // GET: Clientes/Delete/5
+        // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,30 +130,31 @@ namespace FGG_PRUEBA_TECNICA
                 return NotFound();
             }
 
-            var clientes = await _context.Clientes
-                .FirstOrDefaultAsync(m => m.idClientes == id);
-            if (clientes == null)
+            var usuarios = await _context.Usuarios
+                .Include(u => u.Clientes)
+                .FirstOrDefaultAsync(m => m.idUsuario == id);
+            if (usuarios == null)
             {
                 return NotFound();
             }
 
-            return View(clientes);
+            return View(usuarios);
         }
 
-        // POST: Clientes/Delete/5
+        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var clientes = await _context.Clientes.FindAsync(id);
-            _context.Clientes.Remove(clientes);
+            var usuarios = await _context.Usuarios.FindAsync(id);
+            _context.Usuarios.Remove(usuarios);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClientesExists(int id)
+        private bool UsuariosExists(int id)
         {
-            return _context.Clientes.Any(e => e.idClientes == id);
+            return _context.Usuarios.Any(e => e.idUsuario == id);
         }
     }
 }

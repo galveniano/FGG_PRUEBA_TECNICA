@@ -9,6 +9,33 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<h1>Buscador</h1>
+<form asp-action="Index">
+    <div class="input-group">
+
+        <label for="CodClienteSearch">Código de cliente:</label><br><br>
+        <input type= "text" id="CodClienteSearch" name="CodClienteSearch" class="form-control"/> 
+
+        <label for="NombreSearch">Nombre:</label><br><br>
+        <input type= "text" id="NombreSearch" name="NombreSearch" class="form-control"/>
+
+        <label for="FechaInicioSearch">Fecha Inicio:</label><br><br>
+        <input type= "text" id="FechaInicioSearch" name="FechaInicioSearch" class="form-control"/>
+
+        <label for="CodigoComercialSearch">Cóodigo Comercial:</label><br><br>
+        <input type= "text" id="CodigoComercialSearch" name="CodigoComercialSearch" class="form-control"/>   
+        
+        <label for="ActivoSearch">Activo:</label><br><br>
+        <input type= "text" id="ActivoSearch" name="ActivoSearch" class="form-control"/>
+
+    </div>
+    <div></div>
+    <div clas="input-group-append">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>    
+</form>
+<div></div>
 <table class="table">
     <thead>
         <tr>

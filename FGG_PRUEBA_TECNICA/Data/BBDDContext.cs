@@ -14,6 +14,16 @@ namespace FGG_PRUEBA_TECNICA.Data
         {
         }
 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Usuarios>().HasOne(x => x.Clientes).WithMany(x => x.Usuarios).HasForeignKey(x => x.Clientes_idClientes).OnDelete(DeleteBehavior.ClientSetNull);
+        }
+
         public DbSet<FGG_PRUEBA_TECNICA.Models.Clientes> Clientes { get; set; }
+
+        public DbSet<FGG_PRUEBA_TECNICA.Models.Usuarios> Usuarios { get; set; }
     }
 }

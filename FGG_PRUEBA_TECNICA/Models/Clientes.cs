@@ -12,10 +12,10 @@ namespace FGG_PRUEBA_TECNICA.Models
         public int idClientes { get; set; }
         public string CodCliente { get; set; }
         public string Nombre { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public string CodigoComercial { get; set; }
+        public DateTime? FechaInicio { get; set; }
+        public string? CodigoComercial { get; set; }
         public bool Activo { get; set; }
-
-        public virtual ICollection<Usuarios> Usuarios { get; set; }
+        public ICollection<Usuarios> Usuarios { get; set; }
     }
+
 }
